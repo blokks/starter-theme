@@ -1,0 +1,50 @@
+/**
+ * @classname
+ * blokks-filters
+ * 
+ * @description
+ * The category filter shows all categories used by the schedule. Users can use 
+ * this component to filter acts (speakers, talks or artists) by selecting one
+ * or more categories. Activities that don't match the selected category are 
+ * filtered out.
+ * 
+ * There are three special cases which highlight user favorites, friends favorites 
+ * and recommended activities.
+ * 
+ */
+
+.blokks-filters {
+	@include horizontal-list;
+	max-width: 768px;
+
+	button {
+		@include reset-button;
+		@include font($default-font, $size: 15px);
+		color: $default-text-color;
+		margin-right: 15px;
+
+		&:hover {
+			color: $dark-text-color;
+		}
+
+		&[class*='selected'] {
+			color: $highlight-color;
+		}
+	}
+
+	&__favorites-button {
+	}
+
+	&__recommendations-button {
+	}
+
+	&__friends-button {
+	}
+
+	&__category-button {
+	}
+
+	.blokks-icon {
+		margin-right: 5px;
+	}
+}

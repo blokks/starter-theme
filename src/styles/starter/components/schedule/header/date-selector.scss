@@ -1,0 +1,20 @@
+/**
+ * @classname
+ * blokks-date-selector
+ * 
+ * @description
+ * The date selector is visible when your event has multiple dates. Users use 
+ * the date selector to switch between dates. The date selector can be either a 
+ * buttonbar or a dropdown menu. This option is controlled by your embed code.
+ * 
+ */
+
+ .blokks-date-selector {
+    display: flex;
+    flex-direction: column;
+
+    &__selected-date {
+		@include font($default-font, $size: 15px);
+		color: $default-text-color;
+    }
+}

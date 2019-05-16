@@ -1,0 +1,23 @@
+.blokks-dropdown {
+    display: inline-flex;
+    flex-direction: row;
+
+    outline: none;
+    color: $default-text-color;
+
+    &:hover {
+        color: $dark-text-color;
+    }
+
+	select {
+        @include reset-dropdown;
+        @include font($default-font, $size: 15px);
+        color: inherit;
+        cursor: pointer;
+	}
+
+    .blokks-icon {
+        margin-left: 5px;
+        fill: currentcolor;
+    }
+}

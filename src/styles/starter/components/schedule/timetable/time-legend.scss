@@ -1,0 +1,72 @@
+/**
+ * @classname
+ * blokks-time-captions
+ * 
+ * @descriptions
+ * Time captions are placed - depending on your layout - on the left side or 
+ * top of your schedule. It shows the start and end time of its parent timetable.
+ * 
+ */
+
+/** Default styles */
+.blokks-time-legend {
+	&:before {
+		display: block;
+		background-color: $default-background-color;
+		content: '';
+	}
+
+	&__timeslots {
+		@include reset-list;
+	}
+
+	&__timeslot {
+		@include font($secondary-font, $size: 12px);
+		color: $dimmed-text-color;
+		padding: 5px;
+	}
+}
+
+/** Row layout styles */
+@if ($layout == 'columns') {
+	.blokks-time-legend {
+		display: flex;
+		flex-direction: column;
+		width: $time-legend-width;
+
+		&:before {
+			@supports (position: sticky) {
+				@include sticky($top: 0);
+			}
+
+			height: $location-header-height;
+			border-bottom: 1px solid $default-stroke-color;
+		}
+
+		&__timeslot {
+			height: $location-timeslot-height;
+		}
+	}
+}
+
+/** Column layout styles */
+@else if ($layout == 'rows') {
+	.blokks-time-legend {
+		display: flex;
+		flex-direction: row;
+		height: $time-legend-height;
+
+		&:before {
+			@supports (position: sticky) {
+				@include sticky($left: 0);
+			}
+
+			width: $location-header-width;
+			border-right: 1px solid $default-stroke-color;
+		}
+
+		&__timeslot {
+			width: $location-timeslot-width;
+		}
+	}
+}

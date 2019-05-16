@@ -1,0 +1,40 @@
+.blokks-popup {
+	padding: 20px;
+
+	&__title {
+		@include reset-title;
+		@include font($default-font, $size: 18px);
+		color: $dark-text-color;
+	}
+
+	&__description {
+		@include font($default-font, $size: 14px);
+		color: $default-text-color;
+		line-height: 1.5;
+	}
+
+	&__action-button {
+		@include button-with-icon;
+		@include font($default-font, $size: 14px);
+		color: $default-text-color;
+		margin-top: 20px;
+		padding: 10px 20px;
+		background-color: $light-background-color;
+
+        &:hover {
+            color: $dark-text-color;
+		}
+	}
+
+	&__footer {
+		@include font($default-font, $size: 14px);
+		color: $default-text-color;
+		line-height: 1.5;
+	}
+
+	&__close-button {
+		@include reset-button;
+		@include absolute($top: 5px, $right: 5px);
+		@include size(30px);
+	}
+}

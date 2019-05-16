@@ -1,0 +1,22 @@
+/**
+ * @classname
+ * blokks-schedule
+ *
+ * @description
+ * The .blokks-schedule is the main entry point of your schedule. Except for 
+ * modals - which er rendered in their own container - all children of your 
+ * schedule are rendered within this element.
+ *
+ */
+ .blokks-schedule {
+
+	/** Data attribute containing the slug of your schedule/event */
+	&[data-slug='foobar'] {
+	}
+}
+
+@import 'schedule/header';
+@import 'schedule/dashboards';
+@import 'schedule/timetable';
+@import 'schedule/footer';
+@import 'schedule/statusbar';

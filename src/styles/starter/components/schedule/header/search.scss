@@ -1,0 +1,42 @@
+/**
+ * @classname
+ * blokks-search
+ * 
+ * @description
+ * Search is an optional control to make it easy to navigate through all items.
+ * The search input is part of the header and searches through all items, 
+ * independent of the selected day.
+ * 
+ */
+
+ .blokks-search {
+	width: 200px;
+
+	&__input {
+		@include reset-input();
+		@include font($default-font, $size: 15px);
+		color: $default-text-color;
+
+		padding: 8px;
+		border: 1px solid $light-stroke-color;
+	}
+
+	&__suggestions {
+		@include vertical-list;
+	}
+
+	&__suggestion {
+		@include font($default-font, $size: 15px);
+		color: $default-text-color;
+
+		padding: 8px;
+		background-color: white;
+		border-bottom: 1px solid $light-stroke-color;
+		border-left: 1px solid $light-stroke-color;
+		border-right: 1px solid $light-stroke-color;
+
+		&:hover {
+			color: $dark-text-color;
+		}
+	}
+}

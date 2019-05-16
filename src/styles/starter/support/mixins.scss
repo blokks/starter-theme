@@ -1,0 +1,130 @@
+/* Position and size mixins */
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+	position: $position;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+@mixin absolute($args...) {
+	@include position(absolute, $args...);
+}
+
+@mixin relative($args...) {
+	@include position(relative, $args...);
+}
+
+@mixin fixed($args...) {
+	@include position(fixed, $args...);
+}
+
+@mixin sticky($args...) {
+	@include position(sticky, $args...);
+	backface-visibility: hidden;
+}
+
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+/* Font & text mixins */
+@mixin font($name, $size: null, $weight: null) {
+	@include antialiased;
+	font-family: $name;
+
+	@if $size {
+		font-size: $size;
+	}
+
+	@if $weight {
+		font-weight: $weight;
+	}
+}
+
+@mixin antialiased {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin text-replacement {
+	text-indent: 101%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+@mixin truncate-tail {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Reset mixins */
+@mixin reset-title($margin: 0, $padding: 0) {
+	margin: $margin;
+	padding: $padding;
+
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	text-transform: none;
+	letter-spacing: normal;
+}
+
+@mixin reset-button($margin: 0, $padding: 0) {
+	margin: $margin;
+	padding: $padding;
+
+	border: none;
+	border-radius: 0;
+	outline: none;
+	background: none;
+	cursor: pointer;
+}
+
+@mixin reset-list($margin: 0, $padding: 0) {
+	margin: $margin;
+	padding: $padding;
+	list-style-type: none;
+}
+
+@mixin reset-dropdown {
+	appearance: none;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	background-color: transparent;
+	box-shadow: none;
+
+	&::-ms-expand {
+		display: none;
+	}
+}
+
+@mixin reset-input {
+	appearance: none;
+	border: none;
+}
+
+/** Basic styles */
+@mixin horizontal-list($spacing: 10px) {
+	@include reset-list;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	& > li {
+		margin-right: $spacing;
+	}
+}
+
+@mixin vertical-list {
+	@include reset-list;
+	display: flex;
+	flex-direction: column;
+}
+
+@mixin button-with-icon {
+	@include reset-button;
+}

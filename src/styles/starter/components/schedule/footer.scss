@@ -1,0 +1,28 @@
+/**
+ * @classname
+ * blokks-footer
+ *
+ * @description
+ * The footer is positioned below the schedule and shows Blokks branding.
+ * 
+ */
+ 
+ .blokks-footer {
+    padding: 30px 0;
+
+    &__blokks-button {
+        @include reset-button;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__powered-by-label {
+        @include font($default-font, $size: 13px);
+        color: $dimmed-text-color;
+    }
+
+    &__logo {
+        width: 180px;
+    }
+}

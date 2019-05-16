@@ -1,0 +1,184 @@
+/**
+ * @clasname
+ * blokks-activity
+ * 
+ * @description
+ * Bands, speakers etc. are represented by the activity component. It show basic 
+ * information like titles, subtitles, start and end times.
+ * 
+ */
+
+/** Default styles */
+.blokks-activity {
+	display: flex;
+	flex-direction: row;
+	padding: 10px;
+
+	/** Desktop */
+	@include media('>=breakpoint') {
+		background-color: $light-background-color;
+	}
+
+	/** Modifier indicating the activity is marked as a headliner */
+	&--headliner {
+	}
+
+	/** Modifier indicating that the activity is now playing */
+	&--now-playing {
+	}
+
+	/** Modifier indicating that the activity will start shortly */
+	&--coming-soon {
+	}
+
+	/** Modifier indicating that the activity has ended */
+	&--ended {
+	}
+
+	/** Modifier indicating that the activity is delayed */
+	&--delayed {
+	}
+
+	/** Modifier indicating that the activity is favorited by the user */
+	&--favorited {
+	}
+
+	/**
+	 * Modifier indicating the activity was favorited by one of the user his/her friends
+	 * NOTE: Only used when signed in with Twitter or Facebook
+	 */
+	&--friended {
+	}
+
+	/**
+	 * Modifier indicating that the activity is recommended based on the user
+	 * its Spotify listening behavior. NOTE: Only used when signed in with Spotify
+	 */
+	&--recommended {
+	}
+
+	/** Modifier indicating that the activity is dimmed because it is filtered by the user */
+	&--dimmed {
+		background-color: white;
+	}
+
+	/** Modifier indicating that the activity is disabled and not selectable */
+	&--disabled {
+	}
+
+	/** Modifier indicsting that the activity has a poster image */
+	&--has-image {
+	}
+
+	/** Modifier indicating that the activity is selected by the user and its details are shown */
+	&--selected {
+	}
+
+	/** Modifier indicating the activity is small. There is a small chance that  some information will not fit. */
+	&--small-size {
+	}
+
+	/** Modifier indicating the activity is very. There is a slight chance that some information will not fit. */	
+	&--smaller-size {
+	}
+
+	/** Modifier indicating that the activity is really really small. And there is big chance that information will not fit. */
+	&--smallest-size {
+	}
+
+	/** Modifier indicating the activity is crowded at the moment. NOTE: This is an experimental feature */
+    &--crowded {
+    }
+
+	/** Modifier indicating the activity is very busy at the moment. NOTE: This is an experimental feature */
+    &--busy {
+    }
+
+    /** Data attribute indicating the slug of the activity */
+	&[data-slug='backstreet-boys'] {
+	}
+
+    /** Data attribute indicating the list of categories assigned to the activity */
+	&[data-categories*='pop'] {
+	}
+
+	/** Data attribute indicating the start time of the activity */
+	&[data-starts-at='09:00'] {
+	}
+
+	/** Data attribute indicating the end time of the activity */
+	&[data-ends-at='10:00'] {
+	}
+
+	/** Data attribute indicating the duration of the activity in seconds */
+	&[data-duration='3600'] {
+	}
+
+    /** Data attribute indicating the activity its delay in seconds */
+	&[data-delay='0'] {
+	}
+
+	&__header {
+	}
+
+	&__titles {
+	}
+
+	&__title {
+		@include reset-title;
+		@include font($default-font, $size: 15px);
+		color: $dark-text-color;
+	}
+
+	&__subtitle {
+        @include reset-title;
+        @include font($default-font, $size: 14px);
+		color: $default-text-color;
+	}
+
+	.blokks-time-labels {
+        @include font($secondary-font, $size: 12px);
+        color: $default-text-color;
+		margin-top: 5px;
+	}
+
+	.blokks-icon {
+		margin-right: 5px;
+	}
+
+	.blokks-poster {
+		flex: none;
+		order: -1;
+
+		/** Mobile styles */
+		@include media('<breakpoint') {
+			@include size(40px);
+			margin-right: 10px;
+		}
+
+		/** Desktop styles */
+		@include media ('>=breakpoint') {
+			display: none;
+		}
+	}
+
+	/** Modifier indicating the poster is loaded */
+	.blokks-poster--loaded {
+	}
+}
+
+/** Column layout styles */
+@if ($layout == 'columns') {
+	.blokks-activity {
+		width: calc(100% - 10px);
+		height: calc(100% - 2px);
+	}
+}
+
+/** Row layout styles */
+@else if ($layout == 'rows') {
+	.blokks-activity {
+		width: calc(100% - 2px);
+		height: calc(100% - 10px);
+	}
+}

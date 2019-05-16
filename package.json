@@ -1,0 +1,48 @@
+{
+    "name": "@blokks.co/starter-theme",
+    "version": "1.0.0",
+    "description": "Blokks starter theme",
+    "homepage": "https://blokks.co",
+    "author": {
+        "name": "Patrick Pietens",
+        "email": "patrick@blokks.co",
+        "url": "http://patrickpietens.com"
+    },
+    "license": "ISC",
+    "prettier": {
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "semi": false,
+        "singleQuote": true
+    },
+    "scripts": {
+        "start": "run-s clean copy sass autoprefixer icons",
+        "clean": "rimraf dist",
+        "copy": "cpx 'src/fonts/**' dist && cpx 'src/images/**' dist",
+        "sass": "node-sass --recursive false --output-style compressed src/styles -o dist",
+        "autoprefixer": "postcss --use autoprefixer cssnano --no-map --replace dist/*.css",
+        "icons": "svgo -f src/icons && svg-sprite --symbol --svg-xmldecl=false --shape-transform='' --symbol-dest='.' --symbol-sprite='dist/icons.svg' --symbol-example=false src/icons/*.svg"
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "Firefox ESR",
+        "Opera 12.1"
+    ],
+    "dependencies": {
+        "include-media": "^1.4.9"
+    },
+    "devDependencies": {
+        "autoprefixer": "^9.4.7",
+        "browserslist": "^4.4.1",
+        "cpx": "^1.5.0",
+        "cssnano": "^4.1.8",
+        "node-sass": "^4.11.0",
+        "npm-run-all": "^4.1.5",
+        "postcss-cli": "^6.1.1",
+        "prettier": "^1.16.4",
+        "rimraf": "^2.6.3",
+        "svg-sprite": "^1.5.0",
+        "svgo": "^1.1.1"
+    }
+}

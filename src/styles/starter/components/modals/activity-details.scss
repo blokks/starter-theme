@@ -1,0 +1,244 @@
+/**
+ * @classname
+ * blokks-activity-details
+ * 
+ * @description
+ * Activity details shows all information of a selected act, including poster images,
+ * embeds, descriptions, share buttons, external links etc. The details are shown
+ * as a modal. Several modifiers are added indicating the current state of the 
+ * selected activity.
+ * 
+ */
+
+.blokks-activity-details {
+	max-width: 640px;
+
+	/** Modifier indicating the activity is marked as a headliner */
+	&--headliner {
+	}
+
+	/** Modifier indicating that the activity is now playing */
+	&--now-playing {
+	}
+
+	/** Modifier indicating that the activity will start shortly */
+	&--coming-soon {
+	}
+
+	/** Modifier indicating that the activity has ended */
+	&--ended {
+	}
+
+	/** Modifier indicating that the activity is delayed */
+	&--delayed {
+	}
+
+	/** Modifier indicating that the activity is favorited by the user */
+	&--favorited {
+	}
+
+	/**
+	 * Modifier indicating the activity was favorited by one of the user his/her friends
+	 * NOTE: Only used when signed in with Twitter or Facebook
+	 */
+	&--friended {
+	}
+
+	/**
+	 * Modifier indicating that the activity is recommended based on the user
+	 * its Spotify listening behavior. NOTE: Only used when signed in with Spotify
+	 */
+	&--recommended {
+	}
+
+	/** Modifier indicsting that the activity has a poster image */
+	&--has-image {
+	}
+
+	/** Modifier indicating the activity is crowded at the moment. NOTE: This is an experimental feature */
+	&--crowded {
+	}
+
+	/** Modifier indicating the activity is very busy at the moment. NOTE: This is an experimental feature */
+	&--busy {
+	}
+
+	/** Data attribute indicating the slug of the activity */
+	&[data-slug='backstreet-boys'] {
+	}
+
+	/** Data attribute indicating the list of categories assigned to the activity */
+	&[data-categories*='pop'] {
+	}
+
+	/** Data attribute indicating the start time of the activity */
+	&[data-starts-at='09:00'] {
+	}
+
+	/** Data attribute indicating the end time of the activity */
+	&[data-ends-at='10:00'] {
+	}
+
+	/** Data attribute indicating the duration of the activity in seconds */
+	&[data-duration='3600'] {
+	}
+
+	/** Data attribute indicating the activity its delay in seconds */
+	&[data-delay='0'] {
+	}
+
+	.blokks-poster {
+		width: 100%;
+	}
+
+	.blokks-poster:after {
+		display: block;
+		padding-top: 56.25%;
+		content: '';
+	}
+
+	&__close-button {
+		@include reset-button;
+		@include absolute($top: 5px, $right: 5px);
+		@include size(30px);
+	}
+
+	&__close-button .blokks-icon {
+		@include size(16px);
+	}
+
+	/** Container in which all content is placed  */
+	&__content {
+		padding: 20px;
+	}
+
+	&__header {
+	}
+
+	&__title {
+		@include reset-title;
+		@include font($default-font, $size: 18px);
+		color: $dark-text-color;
+	}
+
+	&__subtitle {
+		@include reset-title;
+		@include font($default-font, $size: 16px);
+		color: $default-text-color;
+		margin-top: 5px;
+	}
+
+	&__related-info {
+		@include font($default-font, $size: 14px);
+		color: $default-text-color;
+		margin-top: 20px;
+	}
+
+	.blokks-time-labels {
+		margin-top: 5px;
+	}
+
+	&__location {
+	}
+
+	&__categories {
+		@include horizontal-list($spacing: 10px);
+		@include font($default-font, $size: 14px);
+		color: $default-text-color;
+		margin-top: 5px;
+	}
+
+	&__description {
+		@include font($default-font, $size: 14px);
+        color: $default-text-color;
+        margin-top: 20px;
+		line-height: 1.5;
+	}
+
+	&__favorites {
+		margin-top: 20px;
+	}
+
+	&__signin-button {
+		@include button-with-icon;
+		@include font($default-font, $size: 14px);
+		color: $default-text-color;
+		padding: 10px 20px;
+		background-color: $light-background-color;
+
+        &:hover {
+            color: $dark-text-color;
+        }
+    }
+
+	&__signin-button .blokks-icon {
+		margin-right: 5px;
+	}
+
+	&__favorite-button {
+		@include button-with-icon;
+		@include font($default-font, $size: 14px);
+		color: $default-text-color;
+        
+        padding: 10px 20px;
+		background-color: $light-background-color;
+
+        &:hover {
+            color: $dark-text-color;
+        }    
+    }
+
+	&__favorite-button .blokks-icon {
+		margin-right: 5px;
+	}
+
+	&__unfavorite-button {
+		@include button-with-icon;
+		@include font($default-font, $size: 14px);
+		color: $default-text-color;
+
+        padding: 10px 20px;
+		background-color: $light-background-color;
+
+        &:hover {
+            color: $dark-text-color;
+        }
+    }
+
+	&__unfavorite-button .blokks-icon {
+		margin-right: 5px;
+	}
+
+	/** A list of profile pictures of users/friends who favorited the activity */
+	.blokks-userlist {
+		@include horizontal-list($spacing: 10px);
+	}
+
+	/** A single user/friend wh favorited the activity */
+	.blokks-user {
+		@include size(25px);
+	}
+
+	.blokks-embeds {
+		@include reset-list;
+		margin-top: 20px;
+	}
+
+	.blokks-embed {
+	}
+
+	.blokks-links {
+		@include horizontal-list($spacing: 10px);
+		margin-top: 20px;
+	}
+
+	.blokks-link {
+		@include font($default-font, $size: 15px);
+		color: $default-text-color;
+		text-decoration: none;
+
+        &:hover {
+            color: $dark-text-color;
+        }
+    }
+}

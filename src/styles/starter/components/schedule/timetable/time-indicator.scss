@@ -1,0 +1,22 @@
+/**
+ * @classname
+ * blokks-time-indicator
+ * 
+ * @description
+ * The time indicator is only visible during the event and shows, as the name 
+ * suggests, the current time :-)
+ * 
+ */
+
+.blokks-time-indicator {
+    border-top: 1px solid;
+
+    &__time-label {
+        @include absolute($top: -1px, $left: 0);
+        @include font($secondary-font, $size: 12px);
+        color: $light-text-color;
+
+        padding: 2px 5px;
+        background-color: $dark-background-color;
+    }
+}

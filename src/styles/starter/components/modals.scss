@@ -1,0 +1,19 @@
+/**
+ * @classname
+ * blokks-modal
+ *
+ * @description
+ * .blokks-modal is used for displaying speaker or artist information. It's 
+ * appended to the DOM using the highest z-index possible. Therefor it's always 
+ * placed on top of every other element on the page.
+ *
+ * When presented, the dialog using a simple transition to display itself. The 
+ * transition can be customized by changing the initial transform value of the 
+ * modal its dialog.
+ * 
+ */
+.blokks-modal {
+}
+
+@import 'modals/activity-details';
+@import 'modals/popup';

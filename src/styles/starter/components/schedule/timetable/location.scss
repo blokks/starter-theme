@@ -1,0 +1,106 @@
+/**
+ * @classname
+ * blokks-location
+ * 
+ * @description
+ * A location represents a single stage of your event. Basically, it’s a list of 
+ * activities sorted by time.
+ * 
+ */
+
+ /** Default styles */
+.blokks-location {
+
+    /** Modifier indicating that the location is delayed.*/
+    &--delayed {
+    }
+
+    /**
+     * Modifier indicating that the location is crowded at the moment.
+     * NOTE: This is still an experimental feature
+     */
+    &--crowded {
+    }
+
+    /**
+     * Modifier indicating that the location is very busy at the moment.
+     * NOTE: This is still an experimental feature
+     */
+    &--busy {
+    }
+
+    /** Data attribute indicating the location its slug */
+    &[data-slug='paradiso'] {
+    }
+
+    /** Data attribute indicating the list of categories assigned to the location */
+    &[data-categories*='hiphop'] {
+    }
+
+    /** Data attribute indicating the location its delay in seconds */
+    &[data-delay='0'] {
+    }
+
+    &__header {
+        padding: 10px;
+        background-color: $default-background-color;
+    }
+
+    &__titles {
+    }
+
+    &__title {
+        @include reset-title;
+        @include font($default-font, $size: 17px);
+        color: $dark-text-color;
+    }
+
+    &__subtitle {
+        @include reset-title;
+        @include font($default-font, $size: 14px);
+        color: $default-text-color;
+    }
+
+    &__timeslots {
+        @include reset-list;
+    }
+
+    &__timeslot {
+    }
+
+    /** Modifier indicating the timeslot has one or more activities */
+    &__timeslot--has-activity {
+    }
+}
+
+/** Column layout styles */
+@if ($layout == 'columns') {
+    .blokks-location {
+        width: $location-width;
+
+        &__header {
+            height: $location-header-height;
+            border-bottom: 1px solid $default-stroke-color;
+        }
+
+        &__timeslot {
+            height: $location-timeslot-height;
+        }
+    }
+}
+
+/** Row layout styles */
+@else if ($layout == 'rows') {
+    .blokks-location {
+        height: $location-height;
+
+        &__header {
+            width: $location-header-width;
+            border-right: 1px solid $default-stroke-color;
+        }
+
+        &__timeslot {
+            width: $location-timeslot-width;
+        }
+    }
+}

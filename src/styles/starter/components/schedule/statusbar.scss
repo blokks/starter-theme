@@ -1,0 +1,25 @@
+/**
+ * @classname
+ * blokks-statusbar
+ * 
+ * @description
+ * The statusbar is only visible when your schedule is in development mode. Once
+ * you've upgraded your schedule the statusbar disappears and your schedule becomes
+ * visible to your visitors.
+ * 
+ */
+
+ .blokks-statusbar {
+    background-color: white;
+
+    &__update-link {
+        @include font($default-font, $size: 14px);
+        color: $default-text-color;
+        text-align: center;
+        text-decoration: none;
+
+        &:hover {
+            color: $dark-text-color;
+        }
+    }
+}
