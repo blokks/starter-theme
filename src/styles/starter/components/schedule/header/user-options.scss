@@ -8,19 +8,19 @@
  * 
  */
 
- .blokks-user-options {
-    display: flex;
-    flex-direction: row;
+.blokks-user-options {
+	display: flex;
+	flex-direction: row;
 
-    &__option {
-        @include reset-button;
-        @include font($default-font, $size: 15px);
-        color: $default-text-color;
-        text-decoration: none;
-        margin-right: 15px;
-        
-        &:hover {
-            color: $dark-text-color;
-        }
-    }
+	&__option {
+		@include reset-button;
+		@include font($default-font, $size: 15px);
+		color: $default-text-color;
+		text-decoration: none;
+		margin-right: 15px;
+
+		&:hover {
+			color: $dark-text-color;
+		}
+	}
 }

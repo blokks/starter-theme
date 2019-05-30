@@ -30,7 +30,7 @@
 	.blokks-timetable {
 		@include media('>breakpoint') {
 			background: bg-rows($stroke-color: $light-stroke-color, $row-height: $location-timeslot-height);
-			background-position: 0 $location-header-height;
+			background-position: 0 ($location-header-height - 1);
 		}
 	}
 }
@@ -39,7 +39,7 @@
 	.blokks-timetable {
 		@include media('>breakpoint') {
 			background: bg-columns($stroke-color: $light-stroke-color, $column-width: $location-timeslot-width);
-			background-position: $location-header-width 0;
+			background-position: ($location-header-width - 1) 0;
 		}
     }
 }
