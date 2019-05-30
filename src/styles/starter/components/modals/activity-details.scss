@@ -212,11 +212,12 @@
 	/** A list of profile pictures of users/friends who favorited the activity */
 	.blokks-userlist {
 		@include horizontal-list($spacing: 10px);
+		margin-top: 20px;
 	}
 
 	/** A single user/friend wh favorited the activity */
 	.blokks-user {
-		@include size(25px);
+		@include size(35px);
 	}
 
 	.blokks-embeds {

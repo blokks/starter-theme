@@ -14,3 +14,33 @@ $dimmed-text-color: #ccc;
 /** Stroke colors */
 $light-stroke-color: #eee;
 $default-stroke-color: lightgray;
+
+$vars: (
+	theme-color: red,
+
+	/** Background colors */
+	default-background-color: #fff,
+	light-background-color: #efefef,
+	dark-background-color: #333,
+
+	/** Text colors */
+	light-text-color: #efefef,
+	default-text-color: gray,
+	dark-text-color: #333,
+	dimmed-text-color: #ccc,
+
+	/** Stroke colors */
+	light-stroke-color: #eee,
+	default-stroke-color: lightgray,
+);
+
+.blokks {
+	@each $key, $value in $vars {
+		--#{$key}: #{$value};
+	}
+}
+
+body {
+	background-color: get('light-background-color');
+	background-color: get('light-background-color', $cssVar: true);
+}

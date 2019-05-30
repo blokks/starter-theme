@@ -24,10 +24,9 @@
         "icons": "svgo -f src/icons && svg-sprite --symbol --svg-xmldecl=false --shape-transform='' --symbol-dest='.' --symbol-sprite='dist/icons.svg' --symbol-example=false src/icons/*.svg"
     },
     "browserslist": [
+        "defaults",
         "> 1%",
-        "last 2 versions",
-        "Firefox ESR",
-        "Opera 12.1"
+        "last 2 versions"
     ],
     "dependencies": {
         "include-media": "^1.4.9"

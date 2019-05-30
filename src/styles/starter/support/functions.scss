@@ -8,6 +8,19 @@
 	@return $collection;
 }
 
+@function get($key, $cssVar: false) {
+	@if (map-has-key($vars, $key) == false) {
+		@error "Key #{$key} is not found or undefined in $vars";
+	}
+
+	@if ($cssVar == true) {
+		@return var(--#{$key}, map-get($vars, $key));;
+	}
+	@else {
+		@return map-get($vars, $key);
+	}
+}
+
 @function rem($value) {
 	@return ($value / 16px) + rem;
 }
