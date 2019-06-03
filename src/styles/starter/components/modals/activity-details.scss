@@ -134,8 +134,16 @@
 		margin-top: 20px;
 	}
 
-	.blokks-time-labels {
+	&__date-info {
+		display: flex;
+		flex-direction: row;
 		margin-top: 5px;
+	}
+
+	.blokks-date-label {
+	}
+
+	.blokks-time-labels {
 	}
 
 	&__location {
