@@ -9,7 +9,7 @@
  */
 
 /** Default styles */
-.blokks-time-legend {
+.blokks-time-gutter {
 	&:before {
 		display: block;
 		background-color: $default-background-color;
@@ -29,18 +29,23 @@
 
 /** Row layout styles */
 @if ($layout == 'columns') {
-	.blokks-time-legend {
+	.blokks-time-gutter {
 		display: flex;
 		flex-direction: column;
-		width: $time-legend-width;
+		width: $time-gutter-width;
 
 		&:before {
-			@supports (position: sticky) {
-				@include sticky($top: 0);
-			}
-
-			height: $location-header-height;
 			border-bottom: 1px solid $default-stroke-color;
+		}
+
+		&__timeslots {
+			@include media('>breakpoint') {
+				background-position: 0 ($location-header-height - 1);
+				background: bg-rows(
+					$stroke-color: $light-stroke-color,
+					$row-height: $location-timeslot-height
+				);
+			}
 		}
 
 		&__timeslot {
@@ -51,18 +56,23 @@
 
 /** Column layout styles */
 @else if ($layout == 'rows') {
-	.blokks-time-legend {
+	.blokks-time-gutter {
 		display: flex;
 		flex-direction: row;
-		height: $time-legend-height;
+		height: $time-gutter-height;
 
 		&:before {
-			@supports (position: sticky) {
-				@include sticky($left: 0);
-			}
-
-			width: $location-header-width;
 			border-right: 1px solid $default-stroke-color;
+		}
+
+		&__timeslots {
+			@include media('>breakpoint') {
+				background-position: -1px 0;
+				background: bg-columns(
+					$stroke-color: $light-stroke-color,
+					$column-width: $location-timeslot-width
+				);
+			}
 		}
 
 		&__timeslot {

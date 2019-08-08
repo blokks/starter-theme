@@ -8,15 +8,16 @@
  * schedule are rendered within this element.
  *
  */
- .blokks-schedule {
-
-	/** Data attribute containing the slug of your schedule/event */
-	&[data-slug='foobar'] {
-	}
-}
 
 @import 'schedule/header';
 @import 'schedule/dashboards';
 @import 'schedule/timetable';
 @import 'schedule/footer';
 @import 'schedule/statusbar';
+
+.blokks-schedule {
+
+	/** Data attribute containing the slug of your schedule/event */
+	&[data-slug='foobar'] {
+	}
+}

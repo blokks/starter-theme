@@ -117,14 +117,16 @@
 
 	&__title {
 		@include reset-title;
-		@include font($default-font, $size: 18px);
+		@include font($default-font, $size: 20px);
+		line-height: 1.5;
 		color: $dark-text-color;
 	}
 
 	&__subtitle {
 		@include reset-title;
-		@include font($default-font, $size: 16px);
-		color: $default-text-color;
+		@include font($default-font, $size: 18px);
+		line-height: 1.5;
+		color: $dark-text-color;
 		margin-top: 5px;
 	}
 
@@ -153,18 +155,83 @@
 		@include horizontal-list($spacing: 10px);
 		@include font($default-font, $size: 14px);
 		color: $default-text-color;
+		text-transform: capitalize;
 		margin-top: 5px;
 	}
 
 	&__description {
 		@include font($default-font, $size: 14px);
-        color: $default-text-color;
-        margin-top: 20px;
+		color: $default-text-color;
+		margin-top: 20px;
 		line-height: 1.5;
 	}
 
-	&__favorites {
+	&__description * {
+		font-family: inherit;
+		color: inherit;
+	}
+
+	&__description h1 {
+		@include reset-title;
+		font-size: 18px;
+		font-weight: 400;
+		color: $dark-text-color;
+	}
+
+	&__description h2 {
+		@include reset-title;
+		font-size: 14px;
+		font-weight: 400;
+		color: $dark-text-color;
+	}
+
+	&__description img {
+		float: left;
+		margin: 0 10px 10px 0;
+		max-width: 100%;
+		height: 75px;
+
+		@supports (object-fit: cover) {
+			width: 75px;
+			object-fit: cover;
+		}
+	}
+
+	&__description a {
+		text-decoration: underline;
+	}
+
+	&__description a:hover {
+		color: $dark-text-color;
+	}
+
+	&__description ul {
+		@include reset-list;
+		list-style-type: circle;
+		padding-left: 15px;
+	}
+
+
+	&__share-button {
+		@include button-with-icon;
+		@include font($default-font, $size: 14px);
+		color: $default-text-color;
+
 		margin-top: 20px;
+		padding: 10px 20px;
+		background-color: $light-background-color;
+
+		&:hover {
+			color: $dark-text-color;
+		}
+	}
+
+	&__share-button .blokks-icon {
+		margin-right: 5px;
+	}
+
+	&__favorites {
+		margin-top: 5px;
 	}
 
 	&__signin-button {
@@ -174,10 +241,10 @@
 		padding: 10px 20px;
 		background-color: $light-background-color;
 
-        &:hover {
-            color: $dark-text-color;
-        }
-    }
+		&:hover {
+			color: $dark-text-color;
+		}
+	}
 
 	&__signin-button .blokks-icon {
 		margin-right: 5px;
@@ -187,14 +254,14 @@
 		@include button-with-icon;
 		@include font($default-font, $size: 14px);
 		color: $default-text-color;
-        
-        padding: 10px 20px;
+
+		padding: 10px 20px;
 		background-color: $light-background-color;
 
-        &:hover {
-            color: $dark-text-color;
-        }    
-    }
+		&:hover {
+			color: $dark-text-color;
+		}
+	}
 
 	&__favorite-button .blokks-icon {
 		margin-right: 5px;
@@ -205,13 +272,13 @@
 		@include font($default-font, $size: 14px);
 		color: $default-text-color;
 
-        padding: 10px 20px;
+		padding: 10px 20px;
 		background-color: $light-background-color;
 
-        &:hover {
-            color: $dark-text-color;
-        }
-    }
+		&:hover {
+			color: $dark-text-color;
+		}
+	}
 
 	&__unfavorite-button .blokks-icon {
 		margin-right: 5px;
@@ -246,8 +313,8 @@
 		color: $default-text-color;
 		text-decoration: none;
 
-        &:hover {
-            color: $dark-text-color;
-        }
-    }
+		&:hover {
+			color: $dark-text-color;
+		}
+	}
 }

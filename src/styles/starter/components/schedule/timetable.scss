@@ -8,8 +8,12 @@
  * 
  */
 
- .blokks-timetable {
+@import 'timetable/activity';
+@import 'timetable/location';
+@import 'timetable/time-gutter';
+@import 'timetable/time-indicator';
 
+.blokks-timetable {
 	/** Modifier indicating that the timetable is taking place today */
 	&--is-today {
 	}
@@ -28,23 +32,10 @@
  */
 @if ($layout == 'columns') {
 	.blokks-timetable {
-		@include media('>breakpoint') {
-			background: bg-rows($stroke-color: $light-stroke-color, $row-height: $location-timeslot-height);
-			background-position: 0 ($location-header-height - 1);
-		}
+
+	}
+} @else if ($layout == 'rows') {
+	.blokks-timetable {
+
 	}
 }
-
-@else if ($layout == 'rows') {
-	.blokks-timetable {
-		@include media('>breakpoint') {
-			background: bg-columns($stroke-color: $light-stroke-color, $column-width: $location-timeslot-width);
-			background-position: ($location-header-width - 1) 0;
-		}
-    }
-}
-
-@import 'timetable/activity';
-@import 'timetable/location';
-@import 'timetable/time-legend';
-@import 'timetable/time-indicator';
