@@ -76,27 +76,26 @@
 /** Column layout styles */
 @if ($layout == 'columns') {
 	.blokks-location {
-		padding: 0 5px;
 		width: $location-width;
-
-		@include media('>breakpoint') {
-			background-position: 0 100%;
-			background: bg-rows(
-				$stroke-color: $light-stroke-color,
-				$row-height: $location-timeslot-height
-			);
-		}		
 
 		&__header {
 			border-bottom: 1px solid $default-stroke-color;
 		}
 
-		&__timeslot {
-			height: $location-timeslot-height;
+		&__timeslots {
+			padding: 0 5px;
+
+			@include media('>breakpoint') {
+				margin-top: -1px;
+				background: bg-rows(
+					$stroke-color: $light-stroke-color,
+					$row-height: $location-timeslot-height
+				);
+			}
 		}
 
-		&__timeslots {
-
+		&__timeslot {
+			height: $location-timeslot-height;
 		}
 	}
 }
@@ -111,8 +110,10 @@
 		}
 
 		&__timeslots {
+			padding: 5px 0;
+
 			@include media('>breakpoint') {
-				background-position: -1px 0;
+				margin-left: -1px;
 				background: bg-columns(
 					$stroke-color: $light-stroke-color,
 					$column-width: $location-timeslot-width
@@ -121,7 +122,6 @@
 		}
 
 		&__timeslot {
-			padding: 5px 0;
 			width: $location-timeslot-width;
 		}
 	}

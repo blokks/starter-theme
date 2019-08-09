@@ -40,7 +40,7 @@
 
 		&__timeslots {
 			@include media('>breakpoint') {
-				background-position: 0 ($location-header-height - 1);
+				margin-top: -1px;
 				background: bg-rows(
 					$stroke-color: $light-stroke-color,
 					$row-height: $location-timeslot-height
@@ -67,7 +67,7 @@
 
 		&__timeslots {
 			@include media('>breakpoint') {
-				background-position: -1px 0;
+				margin-left: -1px;
 				background: bg-columns(
 					$stroke-color: $light-stroke-color,
 					$column-width: $location-timeslot-width
