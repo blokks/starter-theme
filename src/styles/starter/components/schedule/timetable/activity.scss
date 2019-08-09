@@ -173,7 +173,7 @@
 /** Column layout styles */
 @if ($layout == 'columns') {
 	.blokks-activity {
-		width: calc(100% - 10px);
+		width: 100%;
 		height: calc(100% - 2px);
 	}
 }
@@ -182,6 +182,6 @@
 @else if ($layout == 'rows') {
 	.blokks-activity {
 		width: calc(100% - 2px);
-		height: calc(100% - 10px);
+		height: 100%;
 	}
 }

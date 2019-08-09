@@ -76,7 +76,16 @@
 /** Column layout styles */
 @if ($layout == 'columns') {
 	.blokks-location {
+		padding: 0 5px;
 		width: $location-width;
+
+		@include media('>breakpoint') {
+			background-position: 0 100%;
+			background: bg-rows(
+				$stroke-color: $light-stroke-color,
+				$row-height: $location-timeslot-height
+			);
+		}		
 
 		&__header {
 			border-bottom: 1px solid $default-stroke-color;
@@ -87,13 +96,7 @@
 		}
 
 		&__timeslots {
-			@include media('>breakpoint') {
-				background-position: 0 ($location-header-height - 1);
-				background: bg-rows(
-					$stroke-color: $light-stroke-color,
-					$row-height: $location-timeslot-height
-				);
-			}
+
 		}
 	}
 }
@@ -118,6 +121,7 @@
 		}
 
 		&__timeslot {
+			padding: 5px 0;
 			width: $location-timeslot-width;
 		}
 	}
