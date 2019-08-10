@@ -44,6 +44,10 @@
 		padding: 10px 25px 10px 0;
 		flex-grow: 1;
 		background-color: $default-background-color;
+
+		@supports (backdrop-filter: blur(4px)) {
+            backdrop-filter: blur(4px);
+        }
 	}
 
 	&__titles {
