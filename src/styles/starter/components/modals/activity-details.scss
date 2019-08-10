@@ -217,7 +217,7 @@
 		@include font($default-font, $size: 14px);
 		color: $default-text-color;
 
-		margin-top: 20px;
+		margin-top: 5px;
 		padding: 10px 20px;
 		background-color: $light-background-color;
 
@@ -231,7 +231,7 @@
 	}
 
 	&__favorites {
-		margin-top: 5px;
+		margin-top: 20px;
 	}
 
 	&__signin-button {
