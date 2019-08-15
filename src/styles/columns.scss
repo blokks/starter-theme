@@ -1,6 +1,7 @@
 @charset 'UTF-8';
 
 $layout: 'columns';
+$breakpoint: 480px;
 
 @import 'screen/support';
 @import 'screen/components';

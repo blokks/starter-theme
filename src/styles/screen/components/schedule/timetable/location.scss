@@ -85,7 +85,7 @@
 /** Column layout styles */
 @include columns {
 	.blokks-location {
-		width: $location-width;
+		min-width: $location-width;
 
 		&__header {
 			@include desktop {
