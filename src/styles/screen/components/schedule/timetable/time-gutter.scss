@@ -14,6 +14,7 @@
 
 	&:before {
 		display: block;
+		flex-grow: 1;
 		background-color: $default-background-color;
 		content: '';
 	}
@@ -29,17 +30,18 @@
 	}
 }
 
-@include columns {
+@include if-columns {
 	.blokks-time-gutter {
 		flex-direction: column;
 		width: $time-gutter-width;
 
 		&:before {
+			@include sticky($top: 0);
 			border-bottom: 1px solid $default-stroke-color;
 		}
 
 		&__timeslots {
-			@include desktop {
+			@include if-desktop {
 				margin-top: -1px;
 				background: bg-rows(
 					$stroke-color: $light-stroke-color,
@@ -54,17 +56,18 @@
 	}
 }
 
-@include rows {
+@include if-rows {
 	.blokks-time-gutter {
 		flex-direction: row;
 		height: $time-gutter-height;
 
 		&:before {
+			@include sticky($left: 0);
 			border-right: 1px solid $default-stroke-color;
 		}
 
 		&__timeslots {
-			@include desktop {
+			@include if-desktop {
 				margin-left: -1px;
 				background: bg-columns(
 					$stroke-color: $light-stroke-color,

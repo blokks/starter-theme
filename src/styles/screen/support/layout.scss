@@ -1,18 +1,18 @@
 $layout: 'columns' !default;
 
-@mixin columns {
+@mixin if-columns {
 	@if ($layout == 'columns') {
 		@content;
 	}
 }
 
-@mixin rows {
+@mixin if-rows {
 	@if ($layout == 'rows') {
 		@content;
 	}
 }
 
-@mixin list {
+@mixin if-list {
 	@if ($layout == 'list') {
 		@content;
 	}

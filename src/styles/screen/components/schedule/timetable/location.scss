@@ -45,7 +45,7 @@
 		flex-grow: 1;
 		background-color: $default-background-color;
 
-		@include mobile {
+		@include if-mobile {
 			border-bottom: 1px solid $default-stroke-color;
 		}
 
@@ -61,7 +61,6 @@
 		@include reset-title;
 		@include font($default-font, $size: 17px);
 		color: $dark-text-color;
-		white-space: nowrap;
 	}
 
 	&__subtitle {
@@ -83,12 +82,12 @@
 }
 
 /** Column layout styles */
-@include columns {
+@include if-columns {
 	.blokks-location {
 		min-width: $location-width;
 
 		&__header {
-			@include desktop {
+			@include if-desktop {
 				border-bottom: 1px solid $default-stroke-color;
 			}
 		}
@@ -96,7 +95,7 @@
 		&__timeslots {
 			padding: 0 5px;
 
-			@include desktop {
+			@include if-desktop {
 				margin-top: -1px;
 				background: bg-rows(
 					$stroke-color: $light-stroke-color,
@@ -106,7 +105,7 @@
 		}
 
 		&__timeslot {
-			@include desktop {
+			@include if-desktop {
 				height: $location-timeslot-height;
 			}
 		}
@@ -114,20 +113,24 @@
 }
 
 /** Row layout styles */
-@include rows {
+@include if-rows {
 	.blokks-location {
 		min-height: $location-height;
 
 		&__header {
-			@include desktop {
+			@include if-desktop {
 				border-right: 1px solid $default-stroke-color;
 			}
+		}
+
+		&__title {
+			white-space: nowrap;
 		}
 
 		&__timeslots {
 			padding: 5px 0;
 
-			@include desktop {
+			@include if-desktop {
 				margin-left: -1px;
 				background: bg-columns(
 					$stroke-color: $light-stroke-color,
@@ -137,7 +140,7 @@
 		}
 
 		&__timeslot {
-			@include desktop {
+			@include if-desktop {
 				width: $location-timeslot-width;
 			}
 		}

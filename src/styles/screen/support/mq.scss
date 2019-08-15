@@ -1,12 +1,12 @@
 $breakpoint: 480px !default;
 
-@mixin mobile {
+@mixin if-mobile {
 	@media only screen and (max-width: $breakpoint) {
 		@content;
 	}
 }
 
-@mixin desktop {
+@mixin if-desktop {
 	@media only screen and (min-width: $breakpoint) {
 		@content;
 	}
