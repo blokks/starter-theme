@@ -8,7 +8,7 @@
         <title>Blokks</title>
 
         <meta name='description' content=''>
-        <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
+        <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no'>
     </head>
 
     <body>
@@ -20,14 +20,19 @@
             }
         </script>
 
-        <script defer 
-            src='embed.js' 
-            data-layout='rows'
-            data-timescale='1800'
-            data-scroll-type='local'
-            data-drag-scroll='always'
-        ></script>
+        <script>
+            var blokks = {
+                id: 'vk1bdelq7mj3',
+                options: {
+                    layout: 'rows',
+                    timescale: 1800,
+                    shortDateFormat: 'D',
+                    measureActivities: false
+                }
+            };
+        </script>
 
+        <script defer src='embed.js'></script>
         <script src='http://127.0.0.1:35729/livereload.js?ext=Chrome&amp;extver=2.1.0'></script>
     </body>
 </html>

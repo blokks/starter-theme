@@ -45,9 +45,13 @@
 		flex-grow: 1;
 		background-color: $default-background-color;
 
+		@include mobile {
+			border-bottom: 1px solid $default-stroke-color;
+		}
+
 		@supports (backdrop-filter: blur(4px)) {
-            backdrop-filter: blur(4px);
-        }
+			backdrop-filter: blur(4px);
+		}
 	}
 
 	&__titles {
@@ -57,6 +61,7 @@
 		@include reset-title;
 		@include font($default-font, $size: 17px);
 		color: $dark-text-color;
+		white-space: nowrap;
 	}
 
 	&__subtitle {
@@ -78,18 +83,20 @@
 }
 
 /** Column layout styles */
-@if ($layout == 'columns') {
+@include columns {
 	.blokks-location {
 		width: $location-width;
 
 		&__header {
-			border-bottom: 1px solid $default-stroke-color;
+			@include desktop {
+				border-bottom: 1px solid $default-stroke-color;
+			}
 		}
 
 		&__timeslots {
 			padding: 0 5px;
 
-			@include media('>breakpoint') {
+			@include desktop {
 				margin-top: -1px;
 				background: bg-rows(
 					$stroke-color: $light-stroke-color,
@@ -99,24 +106,28 @@
 		}
 
 		&__timeslot {
-			height: $location-timeslot-height;
+			@include desktop {
+				height: $location-timeslot-height;
+			}
 		}
 	}
 }
 
 /** Row layout styles */
-@else if ($layout == 'rows') {
+@include rows {
 	.blokks-location {
 		min-height: $location-height;
 
 		&__header {
-			border-right: 1px solid $default-stroke-color;
+			@include desktop {
+				border-right: 1px solid $default-stroke-color;
+			}
 		}
 
 		&__timeslots {
 			padding: 5px 0;
 
-			@include media('>breakpoint') {
+			@include desktop {
 				margin-left: -1px;
 				background: bg-columns(
 					$stroke-color: $light-stroke-color,
@@ -126,7 +137,9 @@
 		}
 
 		&__timeslot {
-			width: $location-timeslot-width;
+			@include desktop {
+				width: $location-timeslot-width;
+			}
 		}
 	}
 }

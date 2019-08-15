@@ -26,16 +26,3 @@
 	&--ended {
 	}
 }
-
-/**
- * Layout specific styles
- */
-@if ($layout == 'columns') {
-	.blokks-timetable {
-
-	}
-} @else if ($layout == 'rows') {
-	.blokks-timetable {
-
-	}
-}

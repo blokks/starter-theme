@@ -1,0 +1,19 @@
+$layout: 'columns' !default;
+
+@mixin columns {
+	@if ($layout == 'columns') {
+		@content;
+	}
+}
+
+@mixin rows {
+	@if ($layout == 'rows') {
+		@content;
+	}
+}
+
+@mixin list {
+	@if ($layout == 'list') {
+		@content;
+	}
+}

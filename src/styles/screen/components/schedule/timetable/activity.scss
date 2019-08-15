@@ -12,10 +12,14 @@
 .blokks-activity {
 	display: flex;
 	flex-direction: row;
-	padding: 10px 15px;
+
+	@include mobile {
+		margin-top: 10px;
+	}
 
 	/** Desktop */
-	@include media('>=breakpoint') {
+	@include desktop {
+		padding: 10px 15px;
 		background-color: $light-background-color;
 	}
 
@@ -78,7 +82,7 @@
 	&--small-size {
 	}
 
-	/** Modifier indicating the activity is very. There is a slight chance that some information will not fit. */	
+	/** Modifier indicating the activity is very. There is a slight chance that some information will not fit. */
 	&--smaller-size {
 	}
 
@@ -87,18 +91,18 @@
 	}
 
 	/** Modifier indicating the activity is crowded at the moment. NOTE: This is an experimental feature */
-    &--crowded {
-    }
+	&--crowded {
+	}
 
 	/** Modifier indicating the activity is very busy at the moment. NOTE: This is an experimental feature */
-    &--busy {
-    }
+	&--busy {
+	}
 
-    /** Data attribute indicating the slug of the activity */
+	/** Data attribute indicating the slug of the activity */
 	&[data-slug='backstreet-boys'] {
 	}
 
-    /** Data attribute indicating the list of categories assigned to the activity */
+	/** Data attribute indicating the list of categories assigned to the activity */
 	&[data-categories*='pop'] {
 	}
 
@@ -114,7 +118,7 @@
 	&[data-duration='3600'] {
 	}
 
-    /** Data attribute indicating the activity its delay in seconds */
+	/** Data attribute indicating the activity its delay in seconds */
 	&[data-delay='0'] {
 	}
 
@@ -132,7 +136,7 @@
 	}
 
 	&__subtitle {
-        @include reset-title;
+		@include reset-title;
 		@include font($default-font, $size: 14px);
 		line-height: 1.25;
 		margin-top: 5px;
@@ -140,7 +144,7 @@
 	}
 
 	.blokks-time-labels {
-        @include font($secondary-font, $size: 12px);
+		@include font($secondary-font, $size: 12px);
 		color: $default-text-color;
 		margin-top: 5px;
 	}
@@ -154,13 +158,13 @@
 		order: -1;
 
 		/** Mobile styles */
-		@include media('<breakpoint') {
+		@include mobile {
 			@include size(40px);
 			margin-right: 10px;
 		}
 
 		/** Desktop styles */
-		@include media ('>=breakpoint') {
+		@include desktop {
 			display: none;
 		}
 	}
@@ -171,7 +175,7 @@
 }
 
 /** Column layout styles */
-@if ($layout == 'columns') {
+@include columns {
 	.blokks-activity {
 		width: 100%;
 		height: calc(100% - 2px);
@@ -179,7 +183,7 @@
 }
 
 /** Row layout styles */
-@else if ($layout == 'rows') {
+@include rows {
 	.blokks-activity {
 		width: calc(100% - 2px);
 		height: 100%;

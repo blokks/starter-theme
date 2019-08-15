@@ -42,15 +42,6 @@
 	}
 }
 
-/**
- * Layout specific styles
- */
-@if ($layout == 'rows') {
-	.blokks-header {
-		@include sticky($left: 0);
-	}
-}
-
 @import 'header/filters';
 @import 'header/date-selector';
 @import 'header/user-options';

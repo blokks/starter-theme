@@ -10,6 +10,8 @@
 
 /** Default styles */
 .blokks-time-gutter {
+	display: flex;
+
 	&:before {
 		display: block;
 		background-color: $default-background-color;
@@ -27,10 +29,8 @@
 	}
 }
 
-/** Row layout styles */
-@if ($layout == 'columns') {
+@include columns {
 	.blokks-time-gutter {
-		display: flex;
 		flex-direction: column;
 		width: $time-gutter-width;
 
@@ -39,7 +39,7 @@
 		}
 
 		&__timeslots {
-			@include media('>breakpoint') {
+			@include desktop {
 				margin-top: -1px;
 				background: bg-rows(
 					$stroke-color: $light-stroke-color,
@@ -54,10 +54,8 @@
 	}
 }
 
-/** Column layout styles */
-@else if ($layout == 'rows') {
+@include rows {
 	.blokks-time-gutter {
-		display: flex;
 		flex-direction: row;
 		height: $time-gutter-height;
 
@@ -66,7 +64,7 @@
 		}
 
 		&__timeslots {
-			@include media('>breakpoint') {
+			@include desktop {
 				margin-left: -1px;
 				background: bg-columns(
 					$stroke-color: $light-stroke-color,
