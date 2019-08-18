@@ -10,6 +10,7 @@
 	&__description {
 		@include font($default-font, $size: 14px);
 		color: $default-text-color;
+		margin-top: 20px;
 		line-height: 1.5;
 	}
 
