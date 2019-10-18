@@ -1,2 +1,35 @@
-$default-font: 'Roboto', Helvetica, Arial, sans-serif;
-$secondary-font: 'Roboto Mono', Monaco, Courier, monospace;
+// Loading material icons
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+$default-font: 'Roboto', Helvetica, Arial, sans-serif !default;
+$icon-font: 'Material Icons' !default;
+
+$base-font-size: 16px !default;
+$convert-to-rem: true !default;
+
+@mixin font($name, $size: null, $weight: null) {
+	@include antialiased;
+	font-family: $name;
+	text-rendering: optimizeSpeed;
+
+	@if ($size) {
+		font-size: $size;
+	}
+
+	@if ($weight) {
+		font-weight: $weight;
+	}
+}
+
+@function rem($value) {
+	@if ($convert-to-rem == false) {
+		@return $value;
+	} @else {
+		@return ($value / $base-font-size) + rem;
+	}
+}
+
+@mixin antialiased {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,70 @@
+@mixin horizontal-list($spacing: null) {
+	@include reset-list;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	@if ($spacing) {
+		& > li {
+			margin-right: $spacing;
+		}
+	}
+}
+
+@mixin vertical-list {
+	@include reset-list;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Buttons */
+@mixin horizontal-list($spacing: 10px) {
+	@include reset-list;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	& > li {
+		margin-right: $spacing;
+	}
+}
+
+@mixin vertical-list {
+	@include reset-list;
+	display: flex;
+	flex-direction: column;
+}
+
+@mixin button-with-icon {
+	@include reset-button;
+}
+
+@function bg-columns(
+	$column-width: 125px,
+	$border-width: 1px,
+	$background-color: transparent,
+	$stroke-color: black
+) {
+	@return repeating-linear-gradient(
+		to right,
+		$stroke-color 0,
+		$stroke-color $border-width,
+		$background-color $border-width,
+		$background-color $column-width
+	);
+}
+
+@function bg-rows(
+	$row-height: 100px,
+	$border-width: 1px,
+	$background-color: transparent,
+	$stroke-color: black
+) {
+	@return repeating-linear-gradient(
+		to bottom,
+		$stroke-color 0,
+		$stroke-color $border-width,
+		$background-color $border-width,
+		$background-color $row-height
+	);
+}

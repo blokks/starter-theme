@@ -1,0 +1,23 @@
+@include layout('columns') {
+	.blokks-gutter {
+		flex-direction: column;
+		width: $time-gutter-width;
+
+		&:before {
+			@include sticky($top: 0);
+			border-bottom: 1px solid $default-stroke-color;
+		}
+
+		&__timeslots {
+			margin-top: -1px;
+			background: bg-rows(
+				$stroke-color: $default-stroke-color,
+				$row-height: $location-timeslot-height
+			);
+		}
+
+		&__timeslot {
+			height: $location-timeslot-height;
+		}
+	}
+}

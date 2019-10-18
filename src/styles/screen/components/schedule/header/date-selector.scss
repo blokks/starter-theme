@@ -9,12 +9,16 @@
  * 
  */
 
- .blokks-date-selector {
-    display: flex;
-    flex-direction: column;
+.blokks-date-selector {
+	display: flex;
+	flex-direction: column;
 
-    &__selected-date {
-      @include font($default-font, $size: 15px);
-      color: $default-text-color;
-    }
+	&__selected-date {
+		@include font($default-font, $size: 15px);
+		color: $default-text-color;
+	}
+
+	.blokks-buttonbar {
+		margin-top: 5px;
+	}
 }

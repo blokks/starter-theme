@@ -1,0 +1,16 @@
+.blokks-icon {
+	@include font($icon-font);
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1rem;
+	color: inherit;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	font-feature-settings: 'liga';
+
+	display: inline-block;
+	vertical-align: text-bottom;
+	pointer-events: none;
+	flex: none;
+}

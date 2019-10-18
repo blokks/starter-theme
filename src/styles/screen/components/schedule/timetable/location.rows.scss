@@ -1,0 +1,28 @@
+@include layout('rows') {
+	.blokks-location {
+		min-height: $location-height;
+
+		&__header {
+			min-width: 100px;
+			padding-top: 15px;
+			border-right: 1px solid $default-stroke-color;
+		}
+
+		&__title {
+			white-space: nowrap;
+		}
+
+		&__timeslots {
+			margin-left: -1px;
+			padding: 5px 0;
+			background: bg-columns(
+				$stroke-color: $default-stroke-color,
+				$column-width: $location-timeslot-width
+			);
+		}
+
+		&__timeslot {
+			width: $location-timeslot-width;
+		}
+	}
+}

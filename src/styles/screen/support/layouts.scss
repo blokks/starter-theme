@@ -1,0 +1,9 @@
+$layout: 'columns' !default;
+
+@mixin layout($layouts...) {
+	@if (index($layouts, $layout)) {
+		@include device('desktop') {
+			@content;
+		}
+	}
+}

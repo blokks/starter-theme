@@ -1,0 +1,7 @@
+.blokks-alert {
+	@include font($default-font, $size: 15px);
+	color: $default-text-color;
+	background-color: $light-background-color;
+	padding: 10px 20px;
+	margin-bottom: 20px;
+}

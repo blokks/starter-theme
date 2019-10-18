@@ -1,0 +1,25 @@
+@include layout('rows') {
+	.blokks-activity {
+		padding: 10px 15px;
+		width: calc(100% - 2px);
+		height: 100%;
+		background-color: $light-background-color;
+
+		&__subtitle {
+			@supports not (-webkit-line-clamp: 2) {
+				@include truncate-tail();
+			}
+
+			@supports (-webkit-line-clamp: 2) {
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 2;
+				overflow: hidden;
+			}
+		}
+
+		.blokks-poster {
+			display: none;
+		}
+	}
+}

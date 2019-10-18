@@ -1,0 +1,11 @@
+@include device('mobile') {
+	.blokks-activity {
+		margin-top: 10px;
+	}
+
+	.blokks-poster {
+		@include size(45px);
+		margin-right: 10px;
+		border-radius: 50%;
+	}
+}

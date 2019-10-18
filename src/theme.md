@@ -1,5 +1,5 @@
 ---
-title: Blokks default theme
+title: Blokks starter theme
 version: %version%
 author:
   name: %author.name%
@@ -9,9 +9,6 @@ layouts:
   - columns
   - rows
   - list
-properties:
-  default-font: Helvetica
-  column-width: 300px
 ---
 
 %description%

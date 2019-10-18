@@ -9,17 +9,17 @@
  * 
  */
 
- .blokks-statusbar {
-    background-color: white;
+.blokks-statusbar {
+	background-color: white;
 
-    &__update-link {
-        @include font($default-font, $size: 14px);
-        color: $default-text-color;
-        text-align: center;
-        text-decoration: none;
+	&__update-link {
+		@include font($default-font, $size: 14px);
+		color: $default-text-color;
+		text-align: center;
+		text-decoration: none;
 
-        &:hover {
-            color: $dark-text-color;
-        }
-    }
+		&:hover {
+			color: $dark-text-color;
+		}
+	}
 }

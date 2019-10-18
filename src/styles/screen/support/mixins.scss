@@ -29,25 +29,7 @@
 	height: $height;
 }
 
-/* Font & text mixins */
-@mixin font($name, $size: null, $weight: null) {
-	@include antialiased;
-	font-family: $name;
-
-	@if $size {
-		font-size: $size;
-	}
-
-	@if $weight {
-		font-weight: $weight;
-	}
-}
-
-@mixin antialiased {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
+/* Font mixins */
 @mixin text-replacement {
 	text-indent: 101%;
 	white-space: nowrap;
@@ -105,26 +87,7 @@
 @mixin reset-input {
 	appearance: none;
 	border: none;
-}
-
-/** Basic styles */
-@mixin horizontal-list($spacing: 10px) {
-	@include reset-list;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-
-	& > li {
-		margin-right: $spacing;
-	}
-}
-
-@mixin vertical-list {
-	@include reset-list;
-	display: flex;
-	flex-direction: column;
-}
-
-@mixin button-with-icon {
-	@include reset-button;
+	outline: none;
+	background: none;
+	box-shadow: none;
 }

@@ -14,14 +14,13 @@
  */
 
 .blokks-filters {
-	@include horizontal-list;
 	max-width: 768px;
 
 	button {
 		@include reset-button;
 		@include font($default-font, $size: 15px);
 		color: $default-text-color;
-		margin-right: 20px;
+		margin-right: 10px;
 		margin-bottom: 5px;
 		text-transform: capitalize;
 
@@ -47,6 +46,6 @@
 	}
 
 	.blokks-icon {
-		margin-right: 8px;
+		margin-right: 5px;
 	}
 }

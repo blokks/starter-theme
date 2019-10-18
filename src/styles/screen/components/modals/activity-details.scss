@@ -12,6 +12,7 @@
 
 .blokks-activity-details {
 	max-width: 640px;
+	background-color: $default-background-color;
 
 	/** Modifier indicating the activity is marked as a headliner */
 	&--headliner {
@@ -89,6 +90,7 @@
 
 	.blokks-poster {
 		width: 100%;
+		background-color: $light-background-color;
 	}
 
 	.blokks-poster:after {
@@ -118,20 +120,19 @@
 	&__title {
 		@include reset-title;
 		@include font($default-font, $size: 20px);
-		line-height: 1.5;
+		line-height: 1.3;
 		color: $dark-text-color;
 	}
 
 	&__subtitle {
 		@include reset-title;
-		@include font($default-font, $size: 18px);
-		line-height: 1.5;
-		color: $dark-text-color;
-		margin-top: 5px;
+		@include font($default-font, $size: 20px);
+		line-height: 1.3;
+		color: $default-text-color;
 	}
 
 	&__related-info {
-		@include font($default-font, $size: 14px);
+		@include font($default-font, $size: 15px);
 		color: $default-text-color;
 		margin-top: 20px;
 	}
@@ -139,7 +140,6 @@
 	&__date-info {
 		display: flex;
 		flex-direction: row;
-		margin-top: 5px;
 	}
 
 	.blokks-date-label {
@@ -149,18 +149,20 @@
 	}
 
 	&__location {
+		display: block;
+		margin-top: 5px;
 	}
 
 	&__categories {
 		@include horizontal-list($spacing: 10px);
-		@include font($default-font, $size: 14px);
+		@include font($default-font, $size: 15px);
 		color: $default-text-color;
 		text-transform: capitalize;
 		margin-top: 5px;
 	}
 
 	&__description {
-		@include font($default-font, $size: 14px);
+		@include font($default-font, $size: 15px);
 		color: $default-text-color;
 		margin-top: 20px;
 		line-height: 1.5;
@@ -180,7 +182,7 @@
 
 	&__description h2 {
 		@include reset-title;
-		font-size: 14px;
+		font-size: 15px;
 		font-weight: 400;
 		color: $dark-text-color;
 	}
@@ -211,10 +213,9 @@
 		padding-left: 15px;
 	}
 
-
 	&__share-button {
 		@include button-with-icon;
-		@include font($default-font, $size: 14px);
+		@include font($default-font, $size: 15px);
 		color: $default-text-color;
 
 		margin-top: 5px;
@@ -236,7 +237,7 @@
 
 	&__signin-button {
 		@include button-with-icon;
-		@include font($default-font, $size: 14px);
+		@include font($default-font, $size: 15px);
 		color: $default-text-color;
 		padding: 10px 20px;
 		background-color: $light-background-color;
@@ -252,7 +253,7 @@
 
 	&__favorite-button {
 		@include button-with-icon;
-		@include font($default-font, $size: 14px);
+		@include font($default-font, $size: 15px);
 		color: $default-text-color;
 
 		padding: 10px 20px;
@@ -269,7 +270,7 @@
 
 	&__unfavorite-button {
 		@include button-with-icon;
-		@include font($default-font, $size: 14px);
+		@include font($default-font, $size: 15px);
 		color: $default-text-color;
 
 		padding: 10px 20px;

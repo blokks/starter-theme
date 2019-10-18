@@ -1,0 +1,7 @@
+@include layout('list') {
+	.blokks-location {
+		&__header {
+			border-bottom: 1px solid $default-stroke-color;
+		}
+	}
+}

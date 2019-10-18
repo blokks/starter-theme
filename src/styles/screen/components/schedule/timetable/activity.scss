@@ -13,16 +13,6 @@
 	display: flex;
 	flex-direction: row;
 
-	@include if-mobile {
-		margin-top: 10px;
-	}
-
-	/** Desktop */
-	@include if-desktop {
-		padding: 10px 15px;
-		background-color: $light-background-color;
-	}
-
 	/** Modifier indicating the activity is marked as a headliner */
 	&--headliner {
 	}
@@ -131,42 +121,33 @@
 	&__title {
 		@include reset-title;
 		@include font($default-font, $size: 15px);
-		line-height: 1.25;
 		color: $dark-text-color;
+		line-height: 1.3;
 	}
 
 	&__subtitle {
 		@include reset-title;
-		@include font($default-font, $size: 14px);
-		line-height: 1.25;
-		margin-top: 5px;
+		@include font($default-font, $size: 15px);
 		color: $default-text-color;
+		line-height: 1.3;
+		margin-top: 5px;
 	}
 
 	.blokks-time-labels {
-		@include font($secondary-font, $size: 12px);
+		@include font($default-font, $size: 14px);
 		color: $default-text-color;
+		line-height: 1.3;
 		margin-top: 5px;
 	}
 
 	.blokks-icon {
-		margin-right: 7px;
+		margin-right: 5px;
 	}
 
 	.blokks-poster {
 		flex: none;
+		background-color: $light-background-color;
 		order: -1;
-
-		/** Mobile styles */
-		@include if-mobile {
-			@include size(40px);
-			margin-right: 10px;
-		}
-
-		/** Desktop styles */
-		@include if-desktop {
-			display: none;
-		}
 	}
 
 	/** Modifier indicating the poster is loaded */
@@ -174,18 +155,7 @@
 	}
 }
 
-/** Column layout styles */
-@include if-columns {
-	.blokks-activity {
-		width: 100%;
-		height: calc(100% - 2px);
-	}
-}
-
-/** Row layout styles */
-@include if-rows {
-	.blokks-activity {
-		width: calc(100% - 2px);
-		height: 100%;
-	}
-}
+@import 'activity.columns';
+@import 'activity.rows';
+@import 'activity.list';
+@import 'activity.mobile';

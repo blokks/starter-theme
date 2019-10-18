@@ -8,7 +8,6 @@
  * 
  */
 
-/** Default styles */
 .blokks-location {
 	/** Modifier indicating that the location is delayed.*/
 	&--delayed {
@@ -45,12 +44,12 @@
 		flex-grow: 1;
 		background-color: $default-background-color;
 
-		@include if-mobile {
-			border-bottom: 1px solid $default-stroke-color;
-		}
-
 		@supports (backdrop-filter: blur(4px)) {
 			backdrop-filter: blur(4px);
+		}
+
+		@include device('mobile') {
+			border-bottom: 1px solid $default-stroke-color;
 		}
 	}
 
@@ -59,14 +58,16 @@
 
 	&__title {
 		@include reset-title;
-		@include font($default-font, $size: 17px);
+		@include font($default-font, $size: 15px);
 		color: $dark-text-color;
+		line-height: 1.3;
 	}
 
 	&__subtitle {
 		@include reset-title;
-		@include font($default-font, $size: 14px);
+		@include font($default-font, $size: 15px);
 		color: $default-text-color;
+		line-height: 1.3;
 	}
 
 	&__timeslots {
@@ -81,68 +82,7 @@
 	}
 }
 
-/** Column layout styles */
-@include if-columns {
-	.blokks-location {
-		min-width: $location-width;
-
-		&__header {
-			@include if-desktop {
-				border-bottom: 1px solid $default-stroke-color;
-			}
-		}
-
-		&__timeslots {
-			padding: 0 5px;
-
-			@include if-desktop {
-				margin-top: -1px;
-				background: bg-rows(
-					$stroke-color: $light-stroke-color,
-					$row-height: $location-timeslot-height
-				);
-			}
-		}
-
-		&__timeslot {
-			@include if-desktop {
-				height: $location-timeslot-height;
-			}
-		}
-	}
-}
-
-/** Row layout styles */
-@include if-rows {
-	.blokks-location {
-		min-height: $location-height;
-
-		&__header {
-			@include if-desktop {
-				border-right: 1px solid $default-stroke-color;
-			}
-		}
-
-		&__title {
-			white-space: nowrap;
-		}
-
-		&__timeslots {
-			padding: 5px 0;
-
-			@include if-desktop {
-				margin-left: -1px;
-				background: bg-columns(
-					$stroke-color: $light-stroke-color,
-					$column-width: $location-timeslot-width
-				);
-			}
-		}
-
-		&__timeslot {
-			@include if-desktop {
-				width: $location-timeslot-width;
-			}
-		}
-	}
-}
+@import 'location.columns.scss';
+@import 'location.rows.scss';
+@import 'location.list.scss';
+@import 'location.mobile.scss';

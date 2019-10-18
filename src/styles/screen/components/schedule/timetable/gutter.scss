@@ -1,0 +1,33 @@
+/**
+ * @classname
+ * blokks-time-captions
+ * 
+ * @descriptions
+ * Time captions are placed - depending on your layout - on the left side or 
+ * top of your schedule. It shows the start and end time of its parent timetable.
+ * 
+ */
+
+.blokks-gutter {
+	display: flex;
+
+	&:before {
+		display: block;
+		flex-grow: 1;
+		background-color: $default-background-color;
+		content: '';
+	}
+
+	&__timeslots {
+		@include reset-list;
+	}
+
+	&__timeslot {
+		@include font($default-font, $size: 14px);
+		color: $dimmed-text-color;
+		padding: 5px;
+	}
+}
+
+@import 'gutter.rows.scss';
+@import 'gutter.columns.scss';

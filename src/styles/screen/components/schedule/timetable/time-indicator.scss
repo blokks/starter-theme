@@ -9,14 +9,14 @@
  */
 
 .blokks-time-indicator {
-    border-top: 1px solid;
+	border-top: 1px solid $highlight-color;
 
-    &__time-label {
-        @include absolute($top: -1px, $left: 0);
-        @include font($secondary-font, $size: 12px);
-        color: $light-text-color;
+	&__time-label {
+		@include absolute($top: -1px, $left: 0);
+		@include font($default-font, $size: 12px);
+		color: $light-text-color;
 
-        padding: 2px 5px;
-        background-color: $dark-background-color;
-    }
+		padding: 2px 5px;
+		background-color: $dark-background-color;
+	}
 }
