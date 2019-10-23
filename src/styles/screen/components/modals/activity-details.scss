@@ -61,7 +61,11 @@
 	}
 
 	/** Modifier indicating the activity is very busy at the moment. NOTE: This is an experimental feature */
-	&--busy {
+	&--packed {
+	}
+
+	/** Modifier indicating the activity is full at the moment. NOTE: This is an experimental feature */
+	&--full {
 	}
 
 	/** Data attribute indicating the slug of the activity */

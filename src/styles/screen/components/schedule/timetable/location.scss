@@ -9,77 +9,80 @@
  */
 
 .blokks-location {
-	/** Modifier indicating that the location is delayed.*/
-	&--delayed {
-	}
-
-	/**
+    /**
      * Modifier indicating that the location is crowded at the moment.
      * NOTE: This is still an experimental feature
      */
-	&--crowded {
-	}
+    &--crowded {
+    }
 
-	/**
+    /**
      * Modifier indicating that the location is very busy at the moment.
      * NOTE: This is still an experimental feature
      */
-	&--busy {
-	}
+    &--packed {
+    }
 
-	/** Data attribute indicating the location its slug */
-	&[data-slug='paradiso'] {
-	}
+    /**
+     * Modifier indicating that the location is full at the moment.
+     * NOTE: This is still an experimental feature
+     */
+    &--full {
+    }
 
-	/** Data attribute indicating the list of categories assigned to the location */
-	&[data-categories*='hiphop'] {
-	}
+    /** Data attribute indicating the location its slug */
+    &[data-slug='paradiso'] {
+    }
 
-	/** Data attribute indicating the location its delay in seconds */
-	&[data-delay='0'] {
-	}
+    /** Data attribute indicating the list of categories assigned to the location */
+    &[data-categories*='hiphop'] {
+    }
 
-	&__header {
-		padding: 10px 25px 10px 0;
-		flex-grow: 1;
-		background-color: $default-background-color;
+    /** Data attribute indicating the location its delay in seconds */
+    &[data-delay='0'] {
+    }
 
-		@supports (backdrop-filter: blur(4px)) {
-			backdrop-filter: blur(4px);
-		}
+    &__header {
+        padding: 10px 25px 10px 0;
+        flex-grow: 1;
+        background-color: $default-background-color;
 
-		@include device('mobile') {
-			border-bottom: 1px solid $default-stroke-color;
-		}
-	}
+        @supports (backdrop-filter: blur(4px)) {
+            backdrop-filter: blur(4px);
+        }
 
-	&__titles {
-	}
+        @include device('mobile') {
+            border-bottom: 1px solid $default-stroke-color;
+        }
+    }
 
-	&__title {
-		@include reset-title;
-		@include font($default-font, $size: 15px);
-		color: $dark-text-color;
-		line-height: 1.3;
-	}
+    &__titles {
+    }
 
-	&__subtitle {
-		@include reset-title;
-		@include font($default-font, $size: 15px);
-		color: $default-text-color;
-		line-height: 1.3;
-	}
+    &__title {
+        @include reset-title;
+        @include font($default-font, $size: 15px);
+        color: $dark-text-color;
+        line-height: 1.3;
+    }
 
-	&__timeslots {
-		@include reset-list;
-	}
+    &__subtitle {
+        @include reset-title;
+        @include font($default-font, $size: 15px);
+        color: $default-text-color;
+        line-height: 1.3;
+    }
 
-	&__timeslot {
-	}
+    &__timeslots {
+        @include reset-list;
+    }
 
-	/** Modifier indicating the timeslot has one or more activities */
-	&__timeslot--has-activity {
-	}
+    &__timeslot {
+    }
+
+    /** Modifier indicating the timeslot has one or more activities */
+    &__timeslot--has-activity {
+    }
 }
 
 @import 'location.columns.scss';
